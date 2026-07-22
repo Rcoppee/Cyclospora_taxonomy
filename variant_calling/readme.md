@@ -28,7 +28,7 @@ After pileup generation, each file is automatically processed using the script:
 tools/clean.sh
 ```
 
-which removes unsupported positions and formats the pileup for downstream analyses.
+which formats the pileup for downstream analyses.
 
 ### Input
 
