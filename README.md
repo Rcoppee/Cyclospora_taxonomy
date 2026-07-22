@@ -26,7 +26,7 @@ The repository includes scripts for:
 ```text
 Cyclospora_population_genomics/
 │
-├── assembling/
+├── assembly/
 │   ├── Quality control
 │   ├── Read mapping
 │   ├── BAM processing
