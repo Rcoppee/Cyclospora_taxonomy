@@ -1,6 +1,6 @@
 # Cyclospora Population Genomics
 
-**Genome-wide population genomics of *Cyclospora cayetanensis* using targeted hybridization capture**
+**Targeted genome capture uncovers global population structure of *Cyclospora cayetanensis* and enables molecular surveillance**
 
 ---
 
@@ -8,7 +8,7 @@
 
 This repository contains the bioinformatic workflows and analysis scripts used in the manuscript:
 
-> **Targeted genome capture reveals the global population structure of *Cyclospora cayetanensis* and enables molecular surveillance.**
+> **Targeted genome capture uncovers global population structure of *Cyclospora cayetanensis* and enables molecular surveillance.**
 
 The objective of this repository is to provide a fully reproducible workflow, from raw Illumina sequencing reads to genome-wide population genomic analyses and the identification of diagnostic molecular markers.
 
@@ -18,7 +18,6 @@ The repository includes scripts for:
 - SNP discovery and variant filtering
 - Population genomic analyses
 - Identification of highly discriminatory genomic regions
-- Generation of publication figures
 
 ---
 
@@ -29,7 +28,6 @@ Cyclospora_population_genomics/
 │
 ├── assembling/
 │   ├── Quality control
-│   ├── Read trimming
 │   ├── Read mapping
 │   ├── BAM processing
 │   └── Coverage analyses
@@ -37,25 +35,18 @@ Cyclospora_population_genomics/
 ├── variant_calling/
 │   ├── SNP calling
 │   ├── Variant filtering
-│   ├── VCF merging
-│   └── SNP matrix generation
+│   └── VCF merging
 │
 ├── population_structure/
 │   ├── Phylogenetic analyses
 │   ├── Principal Component Analysis (PCA)
 │   ├── Discriminant Analysis of Principal Components (DAPC)
-│   ├── Identity-by-Descent (IBD)
-│   ├── Admixture analyses
 │   └── Population assignment
 │
 ├── marker_discovery/
-│   ├── Genome-wide SNP screening
 │   ├── Identification of highly informative loci
 │   ├── Geographic marker discovery
 │   └── Extraction of candidate regions for molecular assay design
-│
-├── figures/
-│   Scripts used to reproduce all manuscript figures
 │
 └── README.md
 ```
@@ -73,17 +64,14 @@ Raw paired-end Illumina reads are processed and aligned against the *Cyclospora 
 The workflow includes:
 
 - FASTQ quality assessment
-- Adapter trimming
 - Read mapping
 - BAM sorting and indexing
-- Duplicate removal
 - Mapping statistics
 - Genome coverage calculation
 
 ### Output
 
 - Sorted BAM files
-- Mapping statistics
 - Coverage metrics
 
 ---
@@ -98,13 +86,10 @@ This workflow performs:
 - Quality filtering
 - Removal of low-confidence variants
 - VCF merging
-- SNP matrix generation
 
 ### Output
 
 - Filtered VCF files
-- SNP matrices
-- Genotype tables
 
 ---
 
@@ -118,9 +103,6 @@ Analyses include:
 - Principal Component Analysis (PCA)
 - Discriminant Analysis of Principal Components (DAPC)
 - Population assignment analyses
-- Identity-by-Descent (IBD) analyses
-- Pairwise genetic distances
-- Population differentiation analyses
 
 These scripts also generate the publication-ready figures.
 
@@ -136,7 +118,7 @@ These analyses were used to:
 - extract candidate genomic regions;
 - design molecular assays for:
   - Sanger sequencing;
-  - High-Resolution Melting (HRM) qPCR.
+  - Melting qPCR.
 
 ---
 
@@ -145,8 +127,7 @@ These analyses were used to:
 The workflows require:
 
 - paired-end Illumina FASTQ files;
-- *Cyclospora cayetanensis* reference genome (FASTA);
-- reference annotation (optional).
+- *Cyclospora cayetanensis* reference genome (FASTA).
 
 Reference genome:
 
@@ -160,16 +141,11 @@ The pipeline was developed using the following software:
 
 | Software | Version |
 |-----------|---------|
-| BWA-MEM2 | XX |
-| Samtools | XX |
-| BCFtools | XX |
-| GATK | XX |
-| Mosdepth | XX |
-| BEDTools | XX |
-| FastQC | XX |
-| fastp | XX |
-| R | XX |
-| Python | XX |
+| BWA-MEM2 | 0.7.17 |
+| SAMtools | 1.20 |
+| BCFtools | 1.20 |
+| R | 4.2.3 |
+| Python | 3.14.5 |
 
 Required R packages are specified within each script.
 
@@ -199,8 +175,8 @@ Accession numbers are provided in the manuscript.
 
 If you use this repository, please cite:
 
-> Coppée R. *et al.*  
-> **Targeted genome capture reveals the global population structure of *Cyclospora cayetanensis* and enables molecular surveillance.**
+> Valencia Jaramillo MC. *et al.*  
+> **Targeted genome capture uncovers global population structure of *Cyclospora cayetanensis* and enables molecular surveillance.**
 
 ---
 
@@ -208,18 +184,12 @@ If you use this repository, please cite:
 
 **Romain Coppée**
 
-French National Reference Centre for Malaria
-
 French National Reference Centre for Cryptosporidiosis, Microsporidiosis and other Digestive Protozoa
+
+ESCAPE Laboratory
 
 Université de Rouen Normandie
 
 Rouen, France
 
-📧 romain.coppee@univ-rouen.fr *(replace if needed)*
-
----
-
-# License
-
-This project is distributed under the **MIT License**.
+📧 romain.coppee@univ-rouen.fr
