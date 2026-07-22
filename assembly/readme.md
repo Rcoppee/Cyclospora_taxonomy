@@ -12,8 +12,6 @@ This script performs the complete read mapping workflow, including:
 
 - read alignment against the reference genome;
 - BAM file sorting and indexing;
-- duplicate removal (if applicable);
-- generation of mapping statistics.
 
 ### Requirements
 
